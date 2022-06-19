@@ -1,44 +1,51 @@
 {
   "name": "bankroll",
   "version": "1.0.0",
-  "description": "Custom Wordpress theme",
+  "description": "Custom WordPress Theme",
   "main": "main.js",
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack --mode production --progress",
-    "dev": "cross-env NODE_ENV=development webpack --watch --mode development --progress",
-    "clean": "rm -rf build/*"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krdev0/wp-theme.git"
   },
   "keywords": [
-    "wordpress",
-    "themes"
+    "Theme",
+    "Wordpress"
   ],
   "author": "KR",
-  "license": "GNU",
-  "private": true,
-  "devDependencies": {
-    "@babel/core": "^7.11.1",
-    "@babel/preset-env": "^7.11.0",
-    "@babel/preset-react": "^7.10.4",
-    "babel-loader": "^8.1.0",
-    "clean-webpack-plugin": "^3.0.0",
-    "cross-env": "^7.0.2",
-    "css-loader": "^4.2.1",
-    "cssnano": "^4.1.10",
-    "file-loader": "^6.0.0",
-    "mini-css-extract-plugin": "^0.9.0",
-    "node-sass": "^4.14.1",
-    "optimize-css-assets-webpack-plugin": "^5.0.3",
-    "sass-loader": "^9.0.3",
-    "sass-mq": "^5.0.1",
-    "style-loader": "^1.2.1",
-    "uglifyjs-webpack-plugin": "^2.2.0",
-    "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krdev0/wp-theme/issues"
   },
-  "browserslist": [
-    "defaults"
-  ],
+  "homepage": "https://github.com/krdev0/wp-theme#readme",
   "dependencies": {
-    "lodash": "^4.17.20"
+    "@babel/polyfill": "^7.12.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.5",
+    "@babel/preset-env": "^7.18.2",
+    "autoprefixer": "^10.4.7",
+    "babel-core": "^6.26.3",
+    "browser-sync": "^2.27.10",
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "css-loader": "^6.7.1",
+    "mini-css-extract-plugin": "^2.6.1",
+    "node-sass": "^7.0.1",
+    "sass-loader": "^13.0.0",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development --watch"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
   }
 }
