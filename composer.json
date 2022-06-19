@@ -1,0 +1,16 @@
+{
+    "require": {
+        "timber/timber": "^1.19"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Bankroll\\": "app/",
+            "Bankroll\\Traits\\": "app/Traits"
+        }
+    }
+}
