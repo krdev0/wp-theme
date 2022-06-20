@@ -9,15 +9,18 @@ class Setup {
 
 	public function __construct() {
 		$this->makeHeadClean();
+
+		//DISABLE GUTENBERG EDITOR
+		add_filter('use_block_editor_for_post', '__return_false', 10);
+		add_action( 'admin_init', [$this, 'hide_editor'] );
+	}
+
+	public function hide_editor() {
+		remove_post_type_support( 'page', 'editor' );
 	}
 
 	public function makeHeadClean() {
 		remove_action('wp_head', 'feed_links_extra', 3);
-		add_action('wp_head', 'ob_start', 1, 0);
-		add_action('wp_head', function () {
-			$pattern = '/.*' . preg_quote(esc_url(get_feed_link('comments_' . get_default_feed())), '/') . '.*[\r\n]+/';
-			echo preg_replace($pattern, '', ob_get_clean());
-		}, 3, 0);
 		remove_action('wp_head', 'rsd_link');
 		remove_action('wp_head', 'wlwmanifest_link');
 		remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10);
@@ -33,7 +36,5 @@ class Setup {
 		remove_filter('the_content_feed', 'wp_staticize_emoji');
 		remove_filter('comment_text_rss', 'wp_staticize_emoji');
 		remove_filter('wp_mail', 'wp_staticize_emoji_for_email');
-		add_filter('use_default_gallery_style', '__return_false');
-		add_filter('emoji_svg_url', '__return_false');
 	}
 }

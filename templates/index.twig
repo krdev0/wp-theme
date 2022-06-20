@@ -1,7 +1,8 @@
 {% extends "base.twig" %}
 
 {% block content %}
-    {% for block in post.meta('blocks') %}
-        {{ { renderComponent(block) } }}
-    {% endfor %}
+    {{ post.post_content }}
+{#    {% for block in post.meta('blocks') %}#}
+{#        {{ renderBlock(block) }}#}
+{#    {% endfor %}#}
 {% endblock %}

@@ -1,6 +1,8 @@
 {
     "require": {
-        "timber/timber": "^1.19"
+        "timber/timber": "^1.19",
+        "hellonico/timber-dump-extension": "^1.0",
+        "flyntwp/acf-field-group-composer": "^1.0.1"
     },
     "config": {
         "allow-plugins": {
