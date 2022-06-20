@@ -27,6 +27,7 @@ class Assets {
 	}
 
 	public function registerScripts() {
+		wp_enqueue_script('script', get_stylesheet_directory_uri() . '/public/dist/app.js', [], null, true);
 		//Enqueue Scripts
 		wp_deregister_script( 'jquery' );
 	}

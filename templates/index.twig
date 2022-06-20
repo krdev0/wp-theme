@@ -1,7 +1,7 @@
 {% extends "base.twig" %}
 
 {% block content %}
-    <div>
-        THIS IS BLOCK CONTENT
-    </div>
+    {% for block in post.meta('blocks') %}
+        {{ { renderComponent(block) } }}
+    {% endfor %}
 {% endblock %}

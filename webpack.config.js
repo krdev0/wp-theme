@@ -6,7 +6,7 @@ const cssPath = './public/scss';
 const outputPath = './public/dist';
 const entryPoints = {
     'app': jsPath + '/main.js',
-    'style': cssPath + '/main.scss',
+    // 'style': cssPath + '/main.scss',
 };
 
 module.exports = {
